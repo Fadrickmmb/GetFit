@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Get Fit</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Get Fit</h1>
+    <div class="tabs">
+      <button onclick="openTab('calculator')">Harris Benedict Calculator</button>
+      <button onclick="openTab('food')">Food Entry</button>
+      <button onclick="openTab('summary')">Day Summary</button>
+    </div>
+  </header>
+
+  <div id="calculator" class="tab-content">
+    <h2>Harris Benedict Calculator</h2>
+    <label for="age">Age:</label>
+    <input type="number" id="age"><br><br>
+    
+    <label for="gender">Gender:</label>
+    <input type="radio" name="gender" value="male" checked> Male
+    <input type="radio" name="gender" value="female"> Female<br><br>
+    
+    <label for="weight">Weight (kg):</label>
+    <input type="number" id="weight"><br><br>
+    
+    <label for="height">Height (cm):</label>
+    <input type="number" id="height"><br><br>
+    
+    <label for="activityLevel">Activity Level:</label>
+    <input type="number" id="activityLevel"><br><br>
+    
+    <button onclick="calculateCalories()">Calculate</button>
+    <p id="caloriesResult"></p>
+  </div>
+
+  <div id="food" class="tab-content" style="display:none;">
+    <h2>Food Entry</h2>
+    <p>Calories from Calculator: <span id="remainingCount">0</span></p>
+    <label for="foodName">Food:</label>
+    <input type="text" id="foodName"><br><br>
+    
+    <label for="time">Time:</label>
+    <input type="text" id="time"><br><br>
+    
+    <label for="caloriesConsumed">Calories Consumed:</label>
+    <input type="number" id="caloriesConsumed"><br><br>
+    
+    <button onclick="addFoodEntry()">Add Food</button>
+    <p id="remainingCalories">Remaining Calories: <span id="foodRemainingCount">0</span></p>
+    <div id="foodEntries"></div>
+  </div>
+
+  <div id="summary" class="tab-content" style="display:none;">
+    <h2>Day Summary</h2>
+    <p>Calories from Calculator: <span id="summaryRemainingCount">0</span></p>
+    <button onclick="showDaySummary()">End Day</button>
+    <div id="daySummary"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
